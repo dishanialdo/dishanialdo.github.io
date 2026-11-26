@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aldo Dishani | Junior Web Developer — Bologna</title>
+  <meta name="description"
+    content="Portfolio di Aldo Dishani, Junior Web Developer in formazione in AI Web Development presso Boolean a Bologna, Italia. Progetti reali in HTML5, CSS3 e JavaScript." />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph per condivisione su LinkedIn / social -->
+  <meta property="og:title" content="Aldo Dishani | Junior Web Developer" />
+  <meta property="og:description"
+    content="Junior Web Developer in formazione presso Boolean (AI Web Development) a Bologna, Italia. Open to Work per posizioni Junior, stage, tirocini e apprendistato." />
+  <meta property="og:type" content="website" />
+
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <!-- Link rapido per accessibilità da tastiera -->
+  <a class="skip-link" href="#main-content" data-i18n="a11y.skip">Vai al contenuto principale</a>
+
+  <!-- =========================================================
+       HEADER & NAVBAR
+       Barra di navigazione fissa in alto con selettore lingua e menu mobile
+  ========================================================== -->
+  <header class="header" id="header">
+    <nav class="nav container" aria-label="Navigazione principale" data-i18n-aria="a11y.mainNav">
+      <a href="#home" class="nav-logo">
+        &lt;Aldo<span>Dishani</span> /&gt;
+      </a>
+
+      <!-- Elenco dei link alle sezioni della pagina -->
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#home" class="nav-link active" data-i18n="nav.home">Home</a></li>
+        <li><a href="#about" class="nav-link" data-i18n="nav.about">Chi sono</a></li>
+        <li><a href="#transition" class="nav-link" data-i18n="nav.transition">Percorso</a></li>
+        <li><a href="#skills" class="nav-link" data-i18n="nav.skills">Competenze</a></li>
+        <li><a href="#projects" class="nav-link" data-i18n="nav.projects">Progetti</a></li>
+        <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Contatti</a></li>
+        <li>
+          <a href="https://github.com/dishanialdo" target="_blank" rel="noopener noreferrer" class="nav-github">
+            GitHub
+          </a>
+        </li>
+      </ul>
+
+      <!-- Controlli a destra: selettore lingua (IT/EN) + hamburger mobile -->
+      <div class="nav-controls">
+        <div class="lang-switch" role="group" aria-label="Selettore lingua" data-i18n-aria="a11y.langSwitch">
+          <button type="button" class="lang-btn active" data-lang="it" aria-pressed="true">IT</button>
+          <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+
+        <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Apri menu di navigazione"
+          aria-expanded="false" aria-controls="nav-menu" data-i18n-aria="a11y.menuToggle">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <!-- =========================================================
+         SEZIONE HOME (Hero)
+    ========================================================== -->
+    <section class="hero section" id="home">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-badges">
+            <span class="badge badge-open">
+              <span class="badge-dot badge-dot-green" aria-hidden="true"></span>
+              <span data-i18n="hero.openToWork">Open to Work</span>
+            </span>
+
+            <span class="badge">
+              <span class="badge-dot" aria-hidden="true"></span>
+              <span data-i18n="hero.academyBadge">AI Web Development @ Boolean</span>
+            </span>
+
+            <span class="badge badge-location">
+              <svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill="currentColor"
+                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5Z" />
+              </svg>
+              <span data-i18n="hero.location">Bologna, Italia</span>
+            </span>
+          </div>
+
+          <h1 class="hero-title">
+            <span data-i18n="hero.greeting">Ciao, sono</span>
+            <span class="accent-text">Aldo Dishani</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            Junior Web Developer &bull; <span id="typing-role" class="typing-role">HTML5, CSS3 &amp; JavaScript</span>
+          </p>
+
+          <p class="hero-description" data-i18n="hero.description">
+            In formazione in AI Web Development presso Boolean, con base a Bologna, Italia.
+            Disponibile per posizioni Junior Web Developer, stage, tirocini e apprendistato.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary" data-i18n="hero.btnProjects">Esplora i Progetti</a>
+            <a href="#contact" class="btn btn-outline" data-i18n="hero.btnContact">Contattami</a>
+
+            <!-- Download CV dalla cartella assets/cv -->
+            <a href="assets/cv/Aldo-Dishani-CV.pdf" download="Aldo-Dishani-CV.pdf" class="btn btn-outline btn-cv"
+              id="download-cv-btn" data-cv-ready="false" aria-describedby="cv-feedback">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill="currentColor"
+                  d="M12 16l-5-5 1.41-1.41L11 12.17V4h2v8.17l2.59-2.58L17 11l-5 5Zm-7 2h14v2H5v-2Z" />
+              </svg>
+              <span data-i18n="hero.btnCv">Scarica CV</span>
+            </a>
+
+            <a href="https://github.com/dishanialdo" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill="currentColor"
+                  d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2Z" />
+              </svg>
+              GitHub
+            </a>
+          </div>
+
+          <p class="cv-feedback" id="cv-feedback" role="status" aria-live="polite"></p>
+        </div>
+
+        <!-- Scheda codice riepilogativa -->
+        <div class="hero-visual">
+          <div class="code-card" aria-label="Scheda profilo sviluppatore" data-i18n-aria="a11y.codeCard">
+            <div class="code-card-header">
+              <span class="dot dot-red" aria-hidden="true"></span>
+              <span class="dot dot-yellow" aria-hidden="true"></span>
+              <span class="dot dot-green" aria-hidden="true"></span>
+              <span class="code-filename">developer.js</span>
+            </div>
+            <pre class="code-body"><code><span class="kw">const</span> <span class="var">developer</span> = {
+  <span class="prop">name</span>: <span class="str">"Aldo Dishani"</span>,
+  <span class="prop">role</span>: <span class="str">"Junior Web Developer"</span>,
+  <span class="prop">training</span>: <span class="str">"AI Web Development @ Boolean"</span>,
+  <span class="prop">location</span>: <span class="str">"Bologna, Italia"</span>,
+  <span class="prop">tools</span>: [<span class="str">"GitHub"</span>, <span class="str">"Google Antigravity"</span>],
+  <span class="prop">openToWork</span>: <span class="bool">true</span>
+};</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SEZIONE CHI SONO (About Me) con spazio per foto personale
+    ========================================================== -->
+    <section class="about section" id="about">
+      <div class="container">
+        <div class="section-header reveal">
+          <p class="section-tag" data-i18n="about.tag">Profilo</p>
+          <h2 class="section-title">
+            <span data-i18n="about.titleMain">Chi</span>
+            <span class="accent-text" data-i18n="about.titleAccent">sono</span>
+          </h2>
+        </div>
+
+        <div class="about-grid">
+          <!-- Spazio predisposto per la foto personale in assets/img/profile.jpg -->
+          <div class="about-photo-card card reveal">
+            <div class="about-photo-frame" id="about-photo-frame">
+              <img src="assets/img/profile.jpg" alt="Foto personale di Aldo Dishani" class="about-photo"
+                id="about-photo" width="320" height="320" loading="lazy" decoding="async" />
+              <div class="about-photo-placeholder" id="about-photo-placeholder">
+                <span class="photo-initials" aria-hidden="true">AD</span>
+                <p class="photo-hint" data-i18n="about.photoHint">Spazio foto personale</p>
+                <code class="photo-path">assets/img/profile.jpg</code>
+              </div>
+            </div>
+
+            <div class="about-quick-meta">
+              <span class="status-open">
+                <span class="badge-dot badge-dot-green" aria-hidden="true"></span>
+                <span data-i18n="hero.openToWork">Open to Work</span>
+              </span>
+              <span data-i18n="hero.location">Bologna, Italia</span>
+            </div>
+          </div>
+
+          <div class="about-text card reveal">
+            <h3 data-i18n="about.heading">Formazione in AI Web Development presso Boolean</h3>
+            <p data-i18n="about.p1">
+              Mi chiamo Aldo Dishani, vivo a Bologna, Italia e sto frequentando il percorso
+              formativo in AI Web Development presso Boolean. Sto costruendo le mie competenze
+              nello sviluppo web partendo dalle basi e dalla pratica quotidiana.
+            </p>
+            <p data-i18n="about.p2">
+              Lavoro su HTML5, CSS3 e JavaScript per creare pagine ordinate, accessibili e
+              responsive, utilizzando GitHub per il controllo versione e Google Antigravity
+              come strumento di supporto allo sviluppo assistito dall'AI.
+            </p>
+            <p data-i18n="about.p3">
+              Sono disponibile per posizioni Junior Web Developer, stage, tirocini e
+              apprendistato, pronto a crescere in un contesto professionale serio e collaborativo.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SEZIONE TRANSIZIONE PROFESSIONALE
+         Dalla metalmeccanica allo sviluppo web
+    ========================================================== -->
+    <section class="transition section" id="transition">
+      <div class="container">
+        <div class="section-header reveal">
+          <p class="section-tag" data-i18n="transition.tag">Transizione Professionale</p>
+          <h2 class="section-title">
+            <span data-i18n="transition.titleMain">Dalla metalmeccanica</span>
+            <span class="accent-text" data-i18n="transition.titleAccent">al Web</span>
+          </h2>
+          <p class="section-description" data-i18n="transition.description">
+            Un cambiamento di percorso costruito con metodo, studio costante e mentalità operativa.
+          </p>
+        </div>
+
+        <div class="transition-story card reveal">
+          <p data-i18n="transition.story">
+            Prima di intraprendere il percorso in AI Web Development presso Boolean, ho maturato
+            esperienza lavorativa nel settore metalmeccanico. Anche se è un ambito diverso dall'informatica,
+            mi ha insegnato a lavorare con precisione, rispettare le consegne, gestire i compiti in
+            autonomia e mantenere alta l'attenzione anche nelle attività ripetitive o complesse. Oggi
+            porto lo stesso approccio serio e concreto nello studio del codice e nello sviluppo web.
+          </p>
+        </div>
+
+        <div class="transition-grid">
+          <article class="card reveal">
+            <span class="highlight-number">01</span>
+            <h3 class="pillar-title" data-i18n="transition.v1Title">Affidabilità</h3>
+            <p class="pillar-desc" data-i18n="transition.v1Desc">
+              Puntualità, senso di responsabilità e attenzione costante verso il risultato finale
+              e le esigenze del team.
+            </p>
+          </article>
+
+          <article class="card reveal">
+            <span class="highlight-number">02</span>
+            <h3 class="pillar-title" data-i18n="transition.v2Title">Autonomia</h3>
+            <p class="pillar-desc" data-i18n="transition.v2Desc">
+              Capacità di organizzare il lavoro, analizzare un problema passo dopo passo e cercare
+              soluzioni in modo ordinato.
+            </p>
+          </article>
+
+          <article class="card reveal">
+            <span class="highlight-number">03</span>
+            <h3 class="pillar-title" data-i18n="transition.v3Title">Disciplina</h3>
+            <p class="pillar-desc" data-i18n="transition.v3Desc">
+              Costanza nell'esercizio quotidiano, rispetto delle procedure e voglia continua di
+              imparare e migliorarsi.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SEZIONE COMPETENZE (Skills)
+         Descrizioni concrete delle conoscenze acquisite, strumenti e lingue
+    ========================================================== -->
+    <section class="skills section" id="skills">
+      <div class="container">
+        <div class="section-header reveal">
+          <p class="section-tag" data-i18n="skills.tag">Competenze</p>
+          <h2 class="section-title">
+            <span data-i18n="skills.titleMain">Le mie</span>
+            <span class="accent-text" data-i18n="skills.titleAccent">Competenze</span>
+          </h2>
+          <p class="section-description" data-i18n="skills.description">
+            Le conoscenze che sto acquisendo nella pratica, gli strumenti quotidiani e le lingue che parlo.
+          </p>
+        </div>
+
+        <div class="skills-grid">
+          <!-- HTML5 -->
+          <article class="skill-card card reveal">
+            <div class="skill-icon" aria-hidden="true">&lt;/&gt;</div>
+            <h3>HTML5</h3>
+            <ul class="skill-points">
+              <li data-i18n="skills.htmlP1">Struttura semantica con header, nav, main, section e footer.</li>
+              <li data-i18n="skills.htmlP2">Creazione di form, input tipizzati, label e attributi alt/aria.</li>
+              <li data-i18n="skills.htmlP3">Impaginazione di card, liste, immagini e link esterni sicuri.</li>
+            </ul>
+          </article>
+
+          <!-- CSS3 -->
+          <article class="skill-card card reveal">
+            <div class="skill-icon" aria-hidden="true">#</div>
+            <h3>CSS3</h3>
+            <ul class="skill-points">
+              <li data-i18n="skills.cssP1">Layout responsive con Flexbox, CSS Grid e media query.</li>
+              <li data-i18n="skills.cssP2">Uso di variabili CSS (:root) per mantenere colori e stili coerenti.</li>
+              <li data-i18n="skills.cssP3">Transizioni, stati hover/focus e adattamento smartphone, tablet e desktop.
+              </li>
+            </ul>
+          </article>
+
+          <!-- JavaScript -->
+          <article class="skill-card card reveal">
+            <div class="skill-icon" aria-hidden="true">JS</div>
+            <h3>JavaScript</h3>
+            <ul class="skill-points">
+              <li data-i18n="skills.jsP1">Variabili, array, oggetti, condizioni e cicli for.</li>
+              <li data-i18n="skills.jsP2">Manipolazione del DOM e gestione degli eventi (click, scroll).</li>
+              <li data-i18n="skills.jsP3">Validazione input e salvataggio dati lato browser con localStorage.</li>
+            </ul>
+          </article>
+
+          <!-- Git & GitHub -->
+          <article class="skill-card card reveal">
+            <div class="skill-icon" aria-hidden="true">Git</div>
+            <h3>Git &amp; GitHub</h3>
+            <ul class="skill-points">
+              <li data-i18n="skills.gitP1">Creazione e aggiornamento di repository didattici su GitHub.</li>
+              <li data-i18n="skills.gitP2">Gestione di commit ordinati per tracciare i progressi del codice.</li>
+              <li data-i18n="skills.gitP3">Organizzazione dei file di progetto per la pubblicazione statica.</li>
+            </ul>
+          </article>
+        </div>
+
+        <!-- Strumenti e Competenze Linguistiche -->
+        <div class="skills-extra-grid">
+          <article class="card reveal">
+            <h3 class="extra-card-title" data-i18n="skills.toolsTitle">Strumenti utilizzati</h3>
+            <ul class="tools-list">
+              <li class="tool-item">
+                <span class="tool-badge">GitHub</span>
+                <p data-i18n="skills.toolGithub">
+                  Versioning del codice, archivio dei progetti didattici e pubblicazione tramite GitHub Pages.
+                </p>
+              </li>
+              <li class="tool-item">
+                <span class="tool-badge">Google Antigravity</span>
+                <p data-i18n="skills.toolAntigravity">
+                  Ambiente AI-assisted utilizzato durante la formazione in AI Web Development per scrivere, analizzare e
+                  migliorare il codice.
+                </p>
+              </li>
+            </ul>
+          </article>
+
+          <article class="card reveal">
+            <h3 class="extra-card-title" data-i18n="skills.languagesTitle">Competenze Linguistiche</h3>
+            <ul class="languages-list">
+              <li>
+                <span data-i18n="skills.langAlbanian">Albanese</span>
+                <span class="lang-level" data-i18n="skills.levelNative">Madrelingua</span>
+              </li>
+              <li>
+                <span data-i18n="skills.langItalian">Italiano</span>
+                <span class="lang-level">C2</span>
+              </li>
+              <li>
+                <span data-i18n="skills.langEnglish">Inglese</span>
+                <span class="lang-level">B2</span>
+              </li>
+              <li>
+                <span data-i18n="skills.langGerman">Tedesco</span>
+                <span class="lang-level">B2</span>
+              </li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SEZIONE PROGETTI (Projects)
+         Esclusivamente progetti didattici reali su github.com/dishanialdo
+         con spazio predisposto per screenshot reali in assets/img/projects/
+    ========================================================== -->
+    <section class="projects section" id="projects">
+      <div class="container">
+        <div class="section-header reveal">
+          <p class="section-tag" data-i18n="projects.tag">Progetti Didattici Reali</p>
+          <h2 class="section-title">
+            <span data-i18n="projects.titleMain">I miei</span>
+            <span class="accent-text" data-i18n="projects.titleAccent">Progetti</span>
+          </h2>
+          <p class="section-description" data-i18n="projects.description">
+            Tutti i progetti didattici reali realizzati durante il percorso di studio e pubblicati sul mio profilo
+            GitHub.
+          </p>
+        </div>
+
+        <div class="project-filters reveal" role="group" aria-label="Filtra i progetti per tecnologia"
+          data-i18n-aria="a11y.projectFilters">
+          <button class="filter-btn active" type="button" data-filter="all"
+            data-i18n="projects.filterAll">Tutti</button>
+          <button class="filter-btn" type="button" data-filter="html-css">HTML &amp; CSS</button>
+          <button class="filter-btn" type="button" data-filter="javascript">JavaScript</button>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Progetto reale 1: OUR-TEAM -->
+          <article class="project-card card reveal" data-category="javascript">
+            <div class="project-banner">
+              <img src="assets/img/projects/our-team.png" alt="Anteprima del progetto OUR-TEAM" class="project-preview"
+                width="600" height="320" loading="lazy" decoding="async" />
+              <span class="project-type" data-i18n="projects.p1Type">DOM &amp; localStorage</span>
+              <span class="project-preview-note" data-i18n="projects.previewPending">Anteprima in arrivo</span>
+            </div>
+            <div class="project-content">
+              <h3>OUR-TEAM</h3>
+              <p data-i18n="projects.p1Desc">
+                Pagina "Meet Our Team" che genera dinamicamente le schede dei membri in JavaScript,
+                consente di aggiungerne di nuovi tramite form e salva i dati in localStorage.
+              </p>
+              <ul class="tech-tags">
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>JavaScript</li>
+              </ul>
+              <div class="project-links">
+                <a href="https://github.com/dishanialdo/OUR-TEAM" target="_blank" rel="noopener noreferrer"
+                  class="project-link" data-i18n="projects.viewGithub">
+                  Codice su GitHub &rarr;
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Progetto reale 2: prezzo-biglietto -->
+          <article class="project-card card reveal" data-category="javascript">
+            <div class="project-banner">
+              <img src="assets/img/projects/prezzo-biglietto.png" alt="Anteprima del progetto prezzo-biglietto"
+                class="project-preview" width="600" height="320" loading="lazy" decoding="async" />
+              <span class="project-type" data-i18n="projects.p2Type">Logica &amp; Form</span>
+              <span class="project-preview-note" data-i18n="projects.previewPending">Anteprima in arrivo</span>
+            </div>
+            <div class="project-content">
+              <h3>prezzo-biglietto</h3>
+              <p data-i18n="projects.p2Desc">
+                Calcolatore interattivo del prezzo di un biglietto in base ai chilometri percorsi
+                (0,21 €/km), con sconti automatici per minorenni (-20%) e Over 65 (-40%).
+              </p>
+              <ul class="tech-tags">
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>JavaScript</li>
+              </ul>
+              <div class="project-links">
+                <a href="https://github.com/dishanialdo/prezzo-biglietto" target="_blank" rel="noopener noreferrer"
+                  class="project-link" data-i18n="projects.viewGithub">
+                  Codice su GitHub &rarr;
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Progetto reale 3: cicli-js -->
+          <article class="project-card card reveal" data-category="javascript">
+            <div class="project-banner">
+              <img src="assets/img/projects/cicli-js.png" alt="Anteprima del progetto cicli-js" class="project-preview"
+                width="600" height="320" loading="lazy" decoding="async" />
+              <span class="project-type" data-i18n="projects.p3Type">Esercizi JavaScript</span>
+              <span class="project-preview-note" data-i18n="projects.previewPending">Anteprima in arrivo</span>
+            </div>
+            <div class="project-content">
+              <h3>cicli-js</h3>
+              <p data-i18n="projects.p3Desc">
+                Raccolta di esercizi didattici dedicati ai cicli for, alle variabili e al calcolo di
+                somme e medie in JavaScript.
+              </p>
+              <ul class="tech-tags">
+                <li>HTML5</li>
+                <li>JavaScript</li>
+              </ul>
+              <div class="project-links">
+                <a href="https://github.com/dishanialdo/cicli-js" target="_blank" rel="noopener noreferrer"
+                  class="project-link" data-i18n="projects.viewGithub">
+                  Codice su GitHub &rarr;
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Progetto reale 4: js-variabili -->
+          <article class="project-card card reveal" data-category="javascript">
+            <div class="project-banner">
+              <img src="assets/img/projects/js-variabili.png" alt="Anteprima del progetto js-variabili"
+                class="project-preview" width="600" height="320" loading="lazy" decoding="async" />
+              <span class="project-type" data-i18n="projects.p4Type">Basi di JavaScript</span>
+              <span class="project-preview-note" data-i18n="projects.previewPending">Anteprima in arrivo</span>
+            </div>
+            <div class="project-content">
+              <h3>js-variabili</h3>
+              <p data-i18n="projects.p4Desc">
+                Primi esercizi con dichiarazione di costanti e variabili, operazioni aritmetiche e
+                concatenazione di stringhe in console.
+              </p>
+              <ul class="tech-tags">
+                <li>HTML5</li>
+                <li>JavaScript</li>
+              </ul>
+              <div class="project-links">
+                <a href="https://github.com/dishanialdo/js-variabili" target="_blank" rel="noopener noreferrer"
+                  class="project-link" data-i18n="projects.viewGithub">
+                  Codice su GitHub &rarr;
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Progetto reale 5: Index.html -->
+          <article class="project-card card reveal" data-category="html-css">
+            <div class="project-banner">
+              <img src="assets/img/projects/index-html.png" alt="Anteprima del progetto Index.html"
+                class="project-preview" width="600" height="320" loading="lazy" decoding="async" />
+              <span class="project-type" data-i18n="projects.p5Type">Primi Layout HTML/CSS</span>
+              <span class="project-preview-note" data-i18n="projects.previewPending">Anteprima in arrivo</span>
+            </div>
+            <div class="project-content">
+              <h3>Index.html</h3>
+              <p data-i18n="projects.p5Desc">
+                Primo esercizio pratico di struttura HTML e collegamento di un foglio di stile CSS
+                esterno per impaginare card, testi e immagini.
+              </p>
+              <ul class="tech-tags">
+                <li>HTML5</li>
+                <li>CSS3</li>
+              </ul>
+              <div class="project-links">
+                <a href="https://github.com/dishanialdo/Index.html" target="_blank" rel="noopener noreferrer"
+                  class="project-link" data-i18n="projects.viewGithub">
+                  Codice su GitHub &rarr;
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SEZIONE CONTATTI (Contact)
+         Collegamento email diretto funzionante (al posto del form demo)
+    ========================================================== -->
+    <section class="contact section" id="contact">
+      <div class="container">
+        <div class="section-header reveal">
+          <p class="section-tag" data-i18n="contact.tag">Parliamoci</p>
+          <h2 class="section-title">
+            <span class="accent-text" data-i18n="contact.titleAccent">Contatti</span>
+          </h2>
+          <p class="section-description" data-i18n="contact.description">
+            Disponibile a Bologna, Italia per posizioni Junior Web Developer, stage, tirocini e apprendistato.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-info card reveal">
+            <h3 data-i18n="contact.infoTitle">Informazioni di contatto</h3>
+            <p data-i18n="contact.infoText">
+              Sono aperto a opportunità di ingresso nel mondo dello sviluppo web, a confronti con
+              altri sviluppatori e a feedback sui miei progetti didattici.
+            </p>
+
+            <ul class="contact-list">
+              <li>
+                <span class="contact-label" data-i18n="contact.labelName">Nome</span>
+                <span>Aldo Dishani</span>
+              </li>
+              <li>
+                <span class="contact-label">Email</span>
+                <a href="mailto:dishanialdo4@gmail.com">dishanialdo4@gmail.com</a>
+              </li>
+              <li>
+                <span class="contact-label" data-i18n="contact.labelLocation">Località</span>
+                <span data-i18n="hero.location">Bologna, Italia</span>
+              </li>
+              <li>
+                <span class="contact-label" data-i18n="contact.labelTraining">Formazione</span>
+                <span>AI Web Development @ Boolean</span>
+              </li>
+              <li>
+                <span class="contact-label" data-i18n="contact.labelAvailability">Disponibilità</span>
+                <span data-i18n="contact.availabilityValue">Junior Web Developer, Stage, Tirocinio, Apprendistato</span>
+              </li>
+              <li>
+                <span class="contact-label" data-i18n="contact.labelStatus">Stato</span>
+                <span class="status-open">
+                  <span class="badge-dot badge-dot-green" aria-hidden="true"></span>
+                  <span data-i18n="hero.openToWork">Open to Work</span>
+                </span>
+              </li>
+              <li>
+                <span class="contact-label">GitHub</span>
+                <a href="https://github.com/dishanialdo" target="_blank" rel="noopener noreferrer">
+                  github.com/dishanialdo
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Azione diretta via email funzionante senza back-end -->
+          <div class="contact-direct card reveal">
+            <h3 data-i18n="contact.directTitle">Scrivimi direttamente</h3>
+            <p data-i18n="contact.directText">
+              Per inviarmi un messaggio reale, clicca sul pulsante qui sotto per aprire il tuo client
+              email oppure copia direttamente il mio indirizzo.
+            </p>
+
+            <a class="email-highlight" href="mailto:dishanialdo4@gmail.com">
+              dishanialdo4@gmail.com
+            </a>
+
+            <div class="contact-actions">
+              <a class="btn btn-primary btn-full"
+                href="mailto:dishanialdo4@gmail.com?subject=Contatto%20dal%20Portfolio" data-i18n="contact.sendEmail">
+                Scrivimi via Email
+              </a>
+
+              <button type="button" class="btn btn-outline btn-full" id="copy-email-btn"
+                data-email="dishanialdo4@gmail.com" data-i18n="contact.copyEmail">
+                Copia indirizzo Email
+              </button>
+
+              <a class="btn btn-ghost btn-full" href="https://github.com/dishanialdo" target="_blank"
+                rel="noopener noreferrer" data-i18n="contact.visitGithub">
+                Visita il profilo GitHub
+              </a>
+            </div>
+
+            <p class="copy-feedback" id="copy-feedback" role="status" aria-live="polite"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================
+       FOOTER
+  ========================================================== -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>
+        &copy; <span id="current-year"></span> Aldo Dishani &mdash; Junior Web Developer &bull;
+        <span data-i18n="hero.location">Bologna, Italia</span>
+      </p>
+      <div class="footer-links">
+        <a href="mailto:dishanialdo4@gmail.com" class="footer-link">Email</a>
+        <a href="https://github.com/dishanialdo" target="_blank" rel="noopener noreferrer" class="footer-link">
+          GitHub
+        </a>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
