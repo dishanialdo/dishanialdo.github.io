@@ -866,6 +866,15 @@ button:focus-visible {
   object-fit: cover;
 }
 
+.project-preview-full {
+  object-fit: contain;
+  object-position: center;
+}
+
+.project-banner-ticket {
+  background: linear-gradient(180deg, #e0409a 0%, #c42491 100%);
+}
+
 .project-preview.is-hidden {
   display: none;
 }
@@ -925,6 +934,24 @@ button:focus-visible {
   border-radius: 6px;
   background-color: rgba(0, 168, 255, 0.1);
   color: var(--accent-bright);
+}
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-sm {
+  padding: 9px 12px;
+  font-size: 0.85rem;
+  border-radius: 8px;
+  white-space: nowrap;
+}
+
+.project-links .btn-sm {
+  flex: 1 1 130px;
 }
 
 .project-link {
