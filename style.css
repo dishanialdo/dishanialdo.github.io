@@ -49,6 +49,7 @@ body {
   color: var(--text-primary);
   line-height: 1.6;
   overflow-x: hidden;
+  overflow-x: clip;
   background-image:
     radial-gradient(circle at 15% 10%, rgba(0, 168, 255, 0.12), transparent 35%),
     radial-gradient(circle at 85% 30%, rgba(0, 102, 255, 0.08), transparent 40%);
@@ -363,6 +364,7 @@ button:focus-visible {
 ========================================================= */
 .hero {
   min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   align-items: center;
   padding-top: 112px;
@@ -1131,6 +1133,12 @@ button:focus-visible {
 /* =========================================================
    MEDIA QUERIES (TABLET & SMARTPHONE)
 ========================================================= */
+@media (max-width: 1150px) {
+  .hero-subtitle {
+    min-height: 3.6em;
+  }
+}
+
 @media (max-width: 960px) {
   .hero-grid,
   .about-grid,
@@ -1165,17 +1173,22 @@ button:focus-visible {
     right: -100%;
     width: 100%;
     height: calc(100vh - var(--header-height));
+    height: calc(100dvh - var(--header-height));
     background-color: rgba(7, 11, 20, 0.98);
     flex-direction: column;
     justify-content: center;
     gap: 24px;
-    transition: right var(--transition);
+    visibility: hidden;
+    pointer-events: none;
+    transition: right var(--transition), visibility var(--transition);
     margin-left: 0;
     padding: 24px;
   }
 
   .nav-menu.open {
     right: 0;
+    visibility: visible;
+    pointer-events: auto;
   }
 
   .nav-toggle.open .hamburger-line:nth-child(1) {
@@ -1221,6 +1234,12 @@ button:focus-visible {
 @media (max-width: 540px) {
   .hero-actions .btn {
     flex: 1 1 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .typing-role {
+    font-size: 0.94em;
   }
 }
 
